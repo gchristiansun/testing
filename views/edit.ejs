@@ -1,0 +1,118 @@
+<!-- views/edit.ejs -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Berita</title>
+    <style>
+        /* styles.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+  margin-top: 30px;
+}
+
+form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: block;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+input[type="text"], textarea {
+  height: 40px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #4CAF50;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Edit Berita</h1>
+    </header>
+
+    <form action="/berita/edit/<%= berita._id %>" method="POST">
+        <div>
+            <label for="judul">Judul Berita:</label>
+            <input type="text" name="judul" id="judul" value="<%= berita.judul %>" required>
+        </div>
+        <div>
+            <label for="isi">Isi Berita:</label>
+            <textarea name="isi" id="isi" required><%= berita.isi %></textarea>
+        </div>
+        <div>
+            <label for="tanggal">Tanggal:</label>
+            <input type="date" name="tanggal" id="tanggal" value="<%= berita.tanggal %>" required>
+        </div>
+        <button type="submit">Update Berita</button>
+    </form>
+
+    <footer>
+        <a href="/">Kembali ke Beranda</a>
+    </footer>
+</body>
+</html>

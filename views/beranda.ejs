@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Berita Perubahan Garis Pantai Pulau Pari</title>
+    <style>
+        /* Reset dasar */
+        body, h1, h2, h3, p, ul, li, a, nav, footer, header, section, article, form, button {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Gaya umum untuk badan halaman */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f9;
+            color: #333;
+            padding: 20px;
+        }
+
+        /* Gaya untuk header */
+        header {
+            background: #00509e;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        header h1 {
+            font-size: 2em;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        header nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Gaya untuk artikel */
+        main article {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        main article h2 {
+            font-size: 1.6em;
+            color: #00509e;
+            margin-bottom: 10px;
+        }
+
+        main article p {
+            margin: 10px 0;
+        }
+
+        /* Gaya untuk formulir */
+        form {
+            background-color: white;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        form input, form textarea, form button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        form button {
+            background-color: #00509e;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1em;
+        }
+
+        form button:hover {
+            background-color: #003f73;
+        }
+
+        /* Gaya untuk tabel data */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table th, table td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        table th {
+            background-color: #00509e;
+            color: white;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        table button {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 5px 10px;
+            font-size: 0.9em;
+            border-radius: 5px;
+        }
+
+        table button:hover {
+            background-color: #c82333;
+        }
+
+        /* Gaya untuk footer */
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px 0;
+            background: #00509e;
+            color: white;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>CRUD Berita Perubahan Garis Pantai Pulau Pari</h1>
+        <nav>
+            <ul>
+                <li><a href="/auth/create">Tambah Berita</a></li>
+                <li><a href="">Lihat Berita</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article>
+            <h2>Informasi Singkat tentang Perubahan Garis Pantai</h2>
+            <p>Berita terkait perubahan garis pantai di Pulau Pari dan sekitarnya sangat penting untuk meningkatkan kesadaran publik tentang ancaman perubahan iklim dan dampaknya terhadap kehidupan masyarakat pesisir. Gunakan fitur CRUD ini untuk mengelola berita terkini tentang hal ini.</p>
+        </article>
+
+        <section id="form">
+            <h3>Tambah Berita Baru</h3>
+            <form action="#" method="POST">
+                <input type="text" id="judul-berita" name="judul-berita" placeholder="Judul Berita" required>
+                <textarea id="konten" name="konten" placeholder="Konten Berita" rows="4" required></textarea>
+                <input type="text" id="sumber" name="sumber" placeholder="Sumber Berita" required>
+                <button type="submit">Simpan Berita</button>
+            </form>
+        </section>
+
+        <section id="data">
+            <h3>Data Berita Perubahan Garis Pantai</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Judul Berita</th>
+                        <th>Konten</th>
+                        <th>Sumber</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Perubahan Garis Pantai Pulau Pari</td>
+                        <td>Perubahan signifikan akibat abrasi yang terjadi di sisi barat pulau, memperburuk kondisi ekosistem lokal.</td>
+                        <td><a href="https://news.republika.co.id" target="_blank">Republika</a></td>
+                        <td>
+                            <button>Edit</button>
+                            <button>Hapus</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Ancaman Reklamasi di Teluk Jakarta</td>
+                        <td>Reklamasi yang meluas di Teluk Jakarta mempengaruhi keberlanjutan ekosistem pesisir Pulau Pari.</td>
+                        <td><a href="https://www.alinea.id" target="_blank">Alinea</a></td>
+                        <td>
+                            <button>Edit</button>
+                            <button>Hapus</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 CRUD Berita Pulau Pari. Semua hak dilindungi.</p>
+    </footer>
+
+</body>
+</html>

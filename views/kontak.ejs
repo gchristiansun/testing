@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak - CoasTrack</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f7f7f7;
+            color: #333;
+            font-size: 1em;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #1E3D58;
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .logo {
+            font-size: 1.6em;
+            font-weight: bold;
+        }
+
+        .navbar nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .navbar nav ul li {
+            margin-left: 25px;
+        }
+
+        .navbar nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 12px;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar nav ul li a:hover {
+            background-color: #FF5003;
+            border-radius: 5px;
+        }
+
+        /* Main Content */
+        main {
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .contact-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .contact-section h2 {
+            font-size: 2em;
+            color: #1E3D58;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-section form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-section label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .contact-section input, 
+        .contact-section textarea {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            color: #333;
+        }
+
+        .contact-section textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .contact-section button {
+            background-color: #1E3D58;
+            color: white;
+            padding: 14px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-section button:hover {
+            background-color: #FF5003;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1E3D58;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .navbar nav ul {
+                display: none;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: #1E3D58;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .navbar nav ul li {
+                margin: 10px 0;
+            }
+
+            .navbar nav ul.active {
+                display: flex;
+            }
+
+            .contact-section {
+                width: 90%;
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1 class="logo">Coas<span>Track</span></h1>
+            <nav>
+                <ul>
+                    <li><a href="/beranda">Beranda</a></li>
+                    <li><a href="/peta">Peta</a></li>
+                    <li><a href="/statistik">Statistik</a></li>
+                    <li><a href="/cegah">Penanggulangan</a></li>
+                    <li><a href="/galeri">Galeri</a></li>
+                    <li><a href="/kontak">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact-section">
+            <h2>Kontak Kami</h2>
+            <form action="/kontak" method="POST">
+                <label for="name">Nama</label>
+                <input type="text" id="name" name="name" required placeholder="Masukkan nama Anda">
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="Masukkan email Anda">
+
+                <label for="message">Pesan</label>
+                <textarea id="message" name="message" rows="5" required placeholder="Tuliskan pesan Anda"></textarea>
+
+                <button type="submit">Kirim Pesan</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 CoasTrack. Semua Hak Dilindungi.</p>
+    </footer>
+</body>
+</html>
